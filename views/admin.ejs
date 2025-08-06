@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin View - Basti Ki Pathshala</title>
+  <link rel="stylesheet" href="/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="container admin-container">
+    <!-- Banner -->
+    <img src="/images/patsala.jpg" alt="Banner" class="banner" />
+
+    <h2>📋 List of Applicants</h2>
+
+    <% if (applicants.length === 0) { %>
+      <p class="empty">No applicants yet.</p>
+    <% } else { %>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Role</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% applicants.forEach(applicant => { %>
+              <tr>
+                <td><%= applicant.name %></td>
+                <td><%= applicant.email %></td>
+                <td><%= applicant.role %></td>
+              </tr>
+            <% }); %>
+          </tbody>
+        </table>
+      </div>
+    <% } %>
+
+    <div class="back-btn-wrapper">
+      <a href="/" class="back-btn">← Back to Home</a>
+    </div>
+
+    <div class="footer">
+      &copy; 2025 Basti Ki Pathshala Foundation • Admin Panel
+    </div>
+  </div>
+</body>
+</html>
